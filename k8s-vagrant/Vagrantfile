@@ -1,0 +1,164 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+$common = <<COMMON
+
+#######################
+### Docker installation
+#######################
+sudo apt-get update -y
+sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get update -y
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+sudo usermod -aG docker vagrant
+
+cat > daemon.json <<EOF
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2"
+}
+EOF
+sudo mv daemon.json /etc/docker/daemon.json
+sudo mkdir -p /etc/systemd/system/docker.service.d
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
+########################
+### kubeadm installation
+########################
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+cat > kubernetes.list <<EOF 
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+sudo mv kubernetes.list /etc/apt/sources.list.d/kubernetes.list
+
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+
+sudo swapoff --all
+
+COMMON
+
+$control = <<CONTROL
+####################
+## Set up networking
+####################
+
+cat > hosts <<HOSTS
+127.0.0.1       localhost
+10.10.10.10 control
+10.10.10.11 node1
+10.10.10.12 node2
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+HOSTS
+sudo cp hosts /etc/hosts
+
+sudo kubeadm init \
+  --control-plane-endpoint 10.10.10.10 \
+  --node-name=control \
+  --pod-network-cidr 192.168.0.0/16> /vagrant_data/output
+
+
+mkdir -p /home/vagrant/.kube
+mkdir -p /root/.kube
+sudo cp -f /etc/kubernetes/admin.conf /root/.kube/config
+sudo cp -f /etc/kubernetes/admin.conf /home/vagrant/.kube/config
+sudo cp -f /etc/kubernetes/admin.conf /vagrant_data/kube_config
+sudo chown \$(id vagrant -u):\$(id vagrant -g) /home/vagrant/.kube/config
+
+kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml
+
+CONTROL
+
+$node = <<NODE
+####################
+## Set up networking
+####################
+
+cat > hosts <<HOSTS
+127.0.0.1       localhost
+10.10.10.10 control
+10.10.10.11 node1
+10.10.10.12 node2
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+HOSTS
+sudo cp hosts /etc/hosts
+
+JOIN=\$(tail -n 2 /vagrant_data/output | tr -d \'\\\\\\n')
+sudo \$JOIN
+NODE
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "bento/ubuntu-18.04"
+
+  config.vm.define "control" do |control|
+    control.vm.hostname = "control"
+    control.vm.network "public_network"
+    control.vm.network "private_network", ip: "10.10.10.10"
+    control.vm.synced_folder ".", "/vagrant_data"
+    control.vm.provision "shell", inline: $common
+    control.vm.provision "shell", inline: $control
+
+    config.vm.provider "vmware_fusion" do |v|
+      v.memory = "4096"
+      v.cpus = "2"
+    end
+  end
+
+  config.vm.define "node1" do |node1|
+    node1.vm.hostname = "node1"
+    node1.vm.network "private_network", ip: "10.10.10.11"
+    node1.vm.synced_folder ".", "/vagrant_data"
+    node1.vm.provision "shell", inline: $common
+    node1.vm.provision "shell", inline: $node
+
+    node1.vm.provider "vmware_fusion" do |v|
+      v.memory = "4096"
+      v.cpus = "2"
+    end
+  end
+
+  config.vm.define "node2" do |node2|
+    node2.vm.hostname = "node2"
+    node2.vm.network "private_network", ip: "10.10.10.12"
+    node2.vm.synced_folder ".", "/vagrant_data"
+    node2.vm.provision "shell", inline: $common
+    node2.vm.provision "shell", inline: $node
+
+    node2.vm.provider "vmware_fusion" do |v|
+      v.memory = "4096"
+      v.cpus = "2"
+    end
+  end
+
+  # Enable provisioning with a shell script. Additional provisioners such as
+  # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
+  # documentation for more information about their specific syntax and use.
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   apt-get update
+  #   apt-get install -y apache2
+  # SHELL
+
+  # Prefer VMware Fusion before VirtualBox
+  config.vm.provider "vmware_fusion"
+  config.vm.provider "virtualbox"
+end
