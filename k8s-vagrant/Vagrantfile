@@ -83,7 +83,8 @@ sudo chown \$(id vagrant -u):\$(id vagrant -g) /home/vagrant/.kube/config
 kubectl apply -f /vagrant_data/manifests/calico-3.12.yaml
 kubectl apply -f /vagrant_data/manifests/ingress-nginix-mandatory.yaml
 kubectl apply -f /vagrant_data/manifests/ingress-nginix-baremetal.yaml
-kubectl apply -f /vagrant_data/manigests/metallb-config.yaml
+kubectl apply -f /vagrant_data/manifests/metallb.yaml
+kubectl apply -f /vagrant_data/manifests/metallb-config.yaml
 
 CONTROL
 
