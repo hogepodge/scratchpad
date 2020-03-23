@@ -57,6 +57,7 @@ $control = <<CONTROL
 
 cat > hosts <<HOSTS
 127.0.0.1       localhost
+192.168.2.20 external
 192.168.2.10 control
 192.168.2.11 node1
 192.168.2.12 node2
@@ -80,11 +81,11 @@ sudo cp -f /etc/kubernetes/admin.conf /home/vagrant/.kube/config
 sudo cp -f /etc/kubernetes/admin.conf /vagrant_data/kube_config
 sudo chown \$(id vagrant -u):\$(id vagrant -g) /home/vagrant/.kube/config
 
-kubectl apply -f /vagrant_data/manifests/calico-3.12.yaml
-kubectl apply -f /vagrant_data/manifests/ingress-nginix-mandatory.yaml
-kubectl apply -f /vagrant_data/manifests/ingress-nginix-baremetal.yaml
-kubectl apply -f /vagrant_data/manifests/metallb.yaml
-kubectl apply -f /vagrant_data/manifests/metallb-config.yaml
+kubectl apply -f /vagrant_data/manifests/calico-new.yaml
+#kubectl apply -f /vagrant_data/manifests/ingress-nginix-mandatory.yaml
+#kubectl apply -f /vagrant_data/manifests/ingress-nginix-baremetal.yaml
+#kubectl apply -f /vagrant_data/manifests/metallb.yaml
+#kubectl apply -f /vagrant_data/manifests/metallb-config.yaml
 
 CONTROL
 
@@ -95,6 +96,7 @@ $node = <<NODE
 
 cat > hosts <<HOSTS
 127.0.0.1       localhost
+192.168.2.20 external
 192.168.2.10 control
 192.168.2.11 node1
 192.168.2.12 node2
@@ -110,8 +112,46 @@ JOIN=\$(tail -n 2 /vagrant_data/output | tr -d \'\\\\\\n')
 sudo \$JOIN
 NODE
 
+$external = <<EXTERNAL
+####################
+## Set up networking
+####################
+
+cat > hosts <<HOSTS
+127.0.0.1       localhost
+192.168.2.20 external
+192.168.2.10 control
+192.168.2.11 node1
+192.168.2.12 node2
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+HOSTS
+sudo cp hosts /etc/hosts
+
+sudo sysctl net.ipv4.ip_forward=1
+sudo apt install -y bird
+
+EXTERNAL
+
+
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-18.04"
+
+  config.vm.define "external" do |external|
+    external.vm.hostname = "external"
+    external.vm.network "public_network"
+    external.vm.network "private_network", ip: "192.168.2.20"
+    external.vm.synced_folder ".", "/vagrant_data"
+    external.vm.provision "shell", inline: $external
+
+    config.vm.provider "vmware_fusion" do |v|
+      v.memory = "1024"
+      v.cpus = "1"
+    end
+  end
 
   config.vm.define "control" do |control|
     control.vm.hostname = "control"
