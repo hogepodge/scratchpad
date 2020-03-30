@@ -1,0 +1,207 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+$common = <<COMMON
+
+#######################
+### Docker installation
+#######################
+sudo apt-get update -y
+sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get update -y
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+sudo usermod -aG docker vagrant
+
+cat > daemon.json <<EOF
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2"
+}
+EOF
+sudo mv daemon.json /etc/docker/daemon.json
+sudo mkdir -p /etc/systemd/system/docker.service.d
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+
+########################
+### kubeadm installation
+########################
+curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+cat > kubernetes.list <<EOF 
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+sudo mv kubernetes.list /etc/apt/sources.list.d/kubernetes.list
+
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+
+sudo swapoff --all
+
+COMMON
+
+$control = <<CONTROL
+####################
+## Set up networking
+####################
+
+cat > hosts <<HOSTS
+127.0.0.1       localhost
+192.168.2.20 external
+192.168.2.10 control
+192.168.2.11 node1
+192.168.2.12 node2
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+HOSTS
+sudo cp hosts /etc/hosts
+
+sudo kubeadm init \
+  --control-plane-endpoint 192.168.2.10 \
+  --node-name=control \
+  --pod-network-cidr 10.48.0.0/16 \
+  --service-cidr 10.49.0.0/16 > /vagrant_data/output
+
+mkdir -p /home/vagrant/.kube
+mkdir -p /root/.kube
+sudo cp -f /etc/kubernetes/admin.conf /root/.kube/config
+sudo cp -f /etc/kubernetes/admin.conf /home/vagrant/.kube/config
+sudo cp -f /etc/kubernetes/admin.conf /vagrant_data/kube_config
+sudo chown \$(id vagrant -u):\$(id vagrant -g) /home/vagrant/.kube/config
+
+#kubectl apply -f /vagrant_data/manifests/calico-new.yaml
+#kubectl apply -f /vagrant_data/manifests/ingress-nginix-mandatory.yaml
+#kubectl apply -f /vagrant_data/manifests/ingress-nginix-baremetal.yaml
+#kubectl apply -f /vagrant_data/manifests/metallb.yaml
+#kubectl apply -f /vagrant_data/manifests/metallb-config.yaml
+
+curl -O -L  https://github.com/projectcalico/calicoctl/releases/download/v3.13.1/calicoctl
+chmod +x calicoctl
+sudo cp calicoctl /usr/local/bin/calicoctl
+
+CONTROL
+
+$node = <<NODE
+####################
+## Set up networking
+####################
+
+cat > hosts <<HOSTS
+127.0.0.1       localhost
+192.168.2.20 external
+192.168.2.10 control
+192.168.2.11 node1
+192.168.2.12 node2
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+HOSTS
+sudo cp hosts /etc/hosts
+
+JOIN=\$(tail -n 2 /vagrant_data/output | tr -d \'\\\\\\n')
+sudo \$JOIN
+NODE
+
+$external = <<EXTERNAL
+####################
+## Set up networking
+####################
+
+cat > hosts <<HOSTS
+127.0.0.1       localhost
+192.168.2.20 external
+192.168.2.10 control
+192.168.2.11 node1
+192.168.2.12 node2
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+HOSTS
+sudo cp hosts /etc/hosts
+
+sudo sysctl net.ipv4.ip_forward=1
+sudo apt install -y bird
+
+sudo cp /vagrant_data/bird/bird.conf /etc/bird/bird.conf
+sudo systemctl restart bird
+
+EXTERNAL
+
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "bento/ubuntu-19.10"
+
+  config.vm.define "external" do |external|
+    external.vm.hostname = "external"
+    external.vm.network "public_network"
+    external.vm.network "private_network", ip: "192.168.2.20"
+    external.vm.synced_folder ".", "/vagrant_data"
+    external.vm.provision "shell", inline: $external
+
+    config.vm.provider "vmware_fusion" do |v|
+      v.memory = "1024"
+      v.cpus = "1"
+    end
+  end
+
+  config.vm.define "control" do |control|
+    control.vm.hostname = "control"
+    control.vm.network "public_network", ip: "192.168.1.100"
+    control.vm.network "private_network", ip: "192.168.2.10"
+    control.vm.synced_folder ".", "/vagrant_data"
+    control.vm.provision "shell", inline: $common
+    control.vm.provision "shell", inline: $control
+
+    config.vm.provider "vmware_fusion" do |v|
+      v.memory = "4096"
+      v.cpus = "2"
+    end
+  end
+
+  config.vm.define "node1" do |node1|
+    node1.vm.hostname = "node1"
+    node1.vm.network "private_network", ip: "192.168.2.11"
+    node1.vm.synced_folder ".", "/vagrant_data"
+    node1.vm.provision "shell", inline: $common
+    node1.vm.provision "shell", inline: $node
+
+    node1.vm.provider "vmware_fusion" do |v|
+      v.memory = "4096"
+      v.cpus = "2"
+    end
+  end
+
+  config.vm.define "node2" do |node2|
+    node2.vm.hostname = "node2"
+    node2.vm.network "private_network", ip: "192.168.2.12"
+    node2.vm.synced_folder ".", "/vagrant_data"
+    node2.vm.provision "shell", inline: $common
+    node2.vm.provision "shell", inline: $node
+
+    node2.vm.provider "vmware_fusion" do |v|
+      v.memory = "4096"
+      v.cpus = "2"
+    end
+  end
+
+  # Prefer VMware Fusion before VirtualBox
+  config.vm.provider "vmware_fusion"
+  config.vm.provider "virtualbox"
+end
