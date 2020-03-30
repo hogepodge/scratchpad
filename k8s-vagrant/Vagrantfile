@@ -72,7 +72,8 @@ sudo cp hosts /etc/hosts
 sudo kubeadm init \
   --control-plane-endpoint 192.168.2.10 \
   --node-name=control \
-  --pod-network-cidr 192.168.128.0/17> /vagrant_data/output
+  --pod-network-cidr 10.48.0.0/16 \
+  --service-cidr 10.49.0.0/16 > /vagrant_data/output
 
 mkdir -p /home/vagrant/.kube
 mkdir -p /root/.kube
@@ -86,6 +87,10 @@ kubectl apply -f /vagrant_data/manifests/calico-new.yaml
 #kubectl apply -f /vagrant_data/manifests/ingress-nginix-baremetal.yaml
 #kubectl apply -f /vagrant_data/manifests/metallb.yaml
 #kubectl apply -f /vagrant_data/manifests/metallb-config.yaml
+
+curl -O -L  https://github.com/projectcalico/calicoctl/releases/download/v3.13.1/calicoctl
+chmod +x calicoctl
+sudo cp calicoctl /usr/local/bin/calicoctl
 
 CONTROL
 
@@ -134,6 +139,9 @@ sudo cp hosts /etc/hosts
 sudo sysctl net.ipv4.ip_forward=1
 sudo apt install -y bird
 
+sudo cp /vagrant_data/bird/bird.conf /etc/bird/bird.conf
+sudo systemctl restart bird
+
 EXTERNAL
 
 
@@ -155,7 +163,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "control" do |control|
     control.vm.hostname = "control"
-    control.vm.network "public_network"
+    control.vm.network "public_network", ip: "192.168.1.100"
     control.vm.network "private_network", ip: "192.168.2.10"
     control.vm.synced_folder ".", "/vagrant_data"
     control.vm.provision "shell", inline: $common
@@ -192,14 +200,6 @@ Vagrant.configure("2") do |config|
       v.cpus = "2"
     end
   end
-
-  # Enable provisioning with a shell script. Additional provisioners such as
-  # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
-  # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
 
   # Prefer VMware Fusion before VirtualBox
   config.vm.provider "vmware_fusion"

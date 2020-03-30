@@ -1,0 +1,10 @@
+---
+apiVersion: projectcalico.org/v3
+kind: BGPConfiguration
+metadata:
+  name: default
+spec:
+  serviceClusterIPs:
+  - cidr: 10.49.0.0/16
+  serviceExternalIPs:
+  - cidr: 192.168.3.0/24

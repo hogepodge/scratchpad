@@ -11,6 +11,7 @@ data:
   typha_service_name: "none"
   # Configure the backend to use.
   calico_backend: "bird"
+
   # Configure the MTU to use (was 1400)
   veth_mtu: "1500"
   # The CNI network configuration to install on each node.  The special
@@ -618,7 +619,7 @@ spec:
             # chosen from this range. Changing this value after installation will have
             # no effect. This should fall within `--cluster-cidr`.
             - name: CALICO_IPV4POOL_CIDR
-              value: 10.48.0.0/24
+              value: "10.48.0.0/24"
             # Disable file logging so `kubectl logs` works.
             - name: CALICO_DISABLE_FILE_LOGGING
               value: "true"
@@ -631,10 +632,10 @@ spec:
             # Set Felix logging to "info"
             - name: FELIX_LOGSEVERITYSCREEN
               value: "info"
+            - name: FELIX_FAILSAFEINBOUNDHOSTPORTS
+              value: "tcp:22, udp:68, udp:53, tcp:53, tcp:179"
             - name: FELIX_HEALTHENABLED
               value: "true"
-            - name: FELIX_FAILSAFEINBOUNDHOSTPORTS
-              value: tcp:22, udp:68, udp:53, tcp:53, tcp:179
           securityContext:
             privileged: true
           resources:
@@ -787,4 +788,5 @@ metadata:
 ---
 # Source: calico/templates/configure-canal.yaml
 
+---
 
