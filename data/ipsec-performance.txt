@@ -1,0 +1,72 @@
+deployment.apps/iperf3-server-deployment created
+service/iperf3-server created
+daemonset.apps/iperf3-clients created
+Server is running
+
+Waiting for iperf3-clients-jhpcj to start...
+Waiting for iperf3-clients-jhpcj to start...
+Waiting for iperf3-clients-jhpcj to start...
+Waiting for iperf3-clients-jhpcj to start...
+Client on 192.168.2.12:  Connecting to host iperf3-server, port 5201
+Client on 192.168.2.12:  [  4] local 10.48.104.3 port 48180 connected to 10.49.225.128 port 5201
+Client on 192.168.2.12:  [ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+Client on 192.168.2.12:  [  4]   0.00-1.00   sec  44.9 MBytes   376 Mbits/sec   13    190 KBytes       
+Client on 192.168.2.12:  [  4]   1.00-2.01   sec  53.5 MBytes   445 Mbits/sec    0    333 KBytes       
+Client on 192.168.2.12:  [  4]   2.01-3.01   sec  46.2 MBytes   387 Mbits/sec    0    338 KBytes       
+Client on 192.168.2.12:  [  4]   3.01-4.02   sec  53.8 MBytes   447 Mbits/sec    0    338 KBytes       
+Client on 192.168.2.12:  [  4]   4.02-5.02   sec  57.5 MBytes   483 Mbits/sec    0    339 KBytes       
+Client on 192.168.2.12:  [  4]   5.02-6.00   sec  64.3 MBytes   549 Mbits/sec    0    430 KBytes       
+Client on 192.168.2.12:  [  4]   6.00-7.00   sec  75.4 MBytes   632 Mbits/sec    0    542 KBytes       
+Client on 192.168.2.12:  [  4]   7.00-8.00   sec  84.6 MBytes   709 Mbits/sec    1    645 KBytes       
+Client on 192.168.2.12:  [  4]   8.00-9.01   sec  80.9 MBytes   672 Mbits/sec   18    706 KBytes       
+Client on 192.168.2.12:  [  4]   9.01-10.00  sec  81.4 MBytes   689 Mbits/sec   48    563 KBytes       
+Client on 192.168.2.12:  - - - - - - - - - - - - - - - - - - - - - - - - -
+Client on 192.168.2.12:  [ ID] Interval           Transfer     Bandwidth       Retr
+Client on 192.168.2.12:  [  4]   0.00-10.00  sec   642 MBytes   539 Mbits/sec   80             sender
+Client on 192.168.2.12:  [  4]   0.00-10.00  sec   641 MBytes   537 Mbits/sec                  receiver
+Client on 192.168.2.12:  
+Client on 192.168.2.12:  iperf Done.
+
+Client on 192.168.2.11:  Connecting to host iperf3-server, port 5201
+Client on 192.168.2.11:  [  4] local 10.48.166.130 port 43506 connected to 10.49.225.128 port 5201
+Client on 192.168.2.11:  [ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+Client on 192.168.2.11:  [  4]   0.00-1.00   sec  4.19 GBytes  36.0 Gbits/sec    3   1.12 MBytes       
+Client on 192.168.2.11:  [  4]   1.00-2.00   sec  4.24 GBytes  36.4 Gbits/sec  859   1.24 MBytes       
+Client on 192.168.2.11:  [  4]   2.00-3.00   sec  4.18 GBytes  35.9 Gbits/sec  213   1.11 MBytes       
+Client on 192.168.2.11:  [  4]   3.00-4.00   sec  4.17 GBytes  35.8 Gbits/sec    0   1.30 MBytes       
+Client on 192.168.2.11:  [  4]   4.00-5.00   sec  4.01 GBytes  34.4 Gbits/sec    0   1.30 MBytes       
+Client on 192.168.2.11:  [  4]   5.00-6.00   sec  3.98 GBytes  34.2 Gbits/sec    0   1.40 MBytes       
+Client on 192.168.2.11:  [  4]   6.00-7.00   sec  4.31 GBytes  37.0 Gbits/sec    0   1.46 MBytes       
+Client on 192.168.2.11:  [  4]   7.00-8.00   sec  4.29 GBytes  36.8 Gbits/sec    0   1.49 MBytes       
+Client on 192.168.2.11:  [  4]   8.00-9.00   sec  4.09 GBytes  35.1 Gbits/sec    0   1.52 MBytes       
+Client on 192.168.2.11:  [  4]   9.00-10.00  sec  4.19 GBytes  36.0 Gbits/sec    0   1.56 MBytes       
+Client on 192.168.2.11:  - - - - - - - - - - - - - - - - - - - - - - - - -
+Client on 192.168.2.11:  [ ID] Interval           Transfer     Bandwidth       Retr
+Client on 192.168.2.11:  [  4]   0.00-10.00  sec  41.6 GBytes  35.8 Gbits/sec  1075             sender
+Client on 192.168.2.11:  [  4]   0.00-10.00  sec  41.6 GBytes  35.8 Gbits/sec                  receiver
+Client on 192.168.2.11:  
+Client on 192.168.2.11:  iperf Done.
+
+Client on 192.168.2.10:  Connecting to host iperf3-server, port 5201
+Client on 192.168.2.10:  [  4] local 10.48.42.196 port 48806 connected to 10.49.225.128 port 5201
+Client on 192.168.2.10:  [ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+Client on 192.168.2.10:  [  4]   0.00-1.00   sec  66.7 MBytes   560 Mbits/sec   61    267 KBytes       
+Client on 192.168.2.10:  [  4]   1.00-2.00   sec  71.6 MBytes   600 Mbits/sec   10    411 KBytes       
+Client on 192.168.2.10:  [  4]   2.00-3.00   sec  82.2 MBytes   690 Mbits/sec    0    534 KBytes       
+Client on 192.168.2.10:  [  4]   3.00-4.00   sec  87.2 MBytes   731 Mbits/sec   42    642 KBytes       
+Client on 192.168.2.10:  [  4]   4.00-5.00   sec  99.6 MBytes   835 Mbits/sec    0    747 KBytes       
+Client on 192.168.2.10:  [  4]   5.00-6.01   sec  81.1 MBytes   671 Mbits/sec    0    796 KBytes       
+Client on 192.168.2.10:  [  4]   6.01-7.00   sec  98.5 MBytes   838 Mbits/sec    0    866 KBytes       
+Client on 192.168.2.10:  [  4]   7.00-8.00   sec   102 MBytes   858 Mbits/sec  244    483 KBytes       
+Client on 192.168.2.10:  [  4]   8.00-9.00   sec  87.6 MBytes   735 Mbits/sec    0    600 KBytes       
+Client on 192.168.2.10:  [  4]   9.00-10.00  sec  94.0 MBytes   789 Mbits/sec   53    496 KBytes       
+Client on 192.168.2.10:  - - - - - - - - - - - - - - - - - - - - - - - - -
+Client on 192.168.2.10:  [ ID] Interval           Transfer     Bandwidth       Retr
+Client on 192.168.2.10:  [  4]   0.00-10.00  sec   871 MBytes   730 Mbits/sec  410             sender
+Client on 192.168.2.10:  [  4]   0.00-10.00  sec   868 MBytes   728 Mbits/sec                  receiver
+Client on 192.168.2.10:  
+Client on 192.168.2.10:  iperf Done.
+
+deployment.apps "iperf3-server-deployment" deleted
+service "iperf3-server" deleted
+daemonset.apps "iperf3-clients" deleted
