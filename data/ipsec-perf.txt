@@ -1,0 +1,342 @@
+deployment.apps/iperf3-server-deployment created
+service/iperf3-server created
+daemonset.apps/iperf3-clients created
+Waiting for iperf3 server to start...
+Waiting for iperf3 server to start...
+Server is running
+
+Waiting for iperf3-clients-2bmw6 to start...
+Client on 192.168.2.12:  Connecting to host iperf3-server, port 5201
+Client on 192.168.2.12:  [  4] local 10.48.104.2 port 50118 connected to 10.49.77.228 port 5201
+Client on 192.168.2.12:  [ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+Client on 192.168.2.12:  [  4]   0.00-1.00   sec  4.73 GBytes  40.7 Gbits/sec    2   3.01 MBytes       
+Client on 192.168.2.12:  [  4]   1.00-2.00   sec  4.71 GBytes  40.5 Gbits/sec    3   3.01 MBytes       
+Client on 192.168.2.12:  [  4]   2.00-3.00   sec  4.37 GBytes  37.5 Gbits/sec   18   3.01 MBytes       
+Client on 192.168.2.12:  [  4]   3.00-4.00   sec  4.22 GBytes  36.3 Gbits/sec    9   3.01 MBytes       
+Client on 192.168.2.12:  [  4]   4.00-5.00   sec  4.68 GBytes  40.2 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]   5.00-6.00   sec  4.92 GBytes  42.3 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]   6.00-7.00   sec  4.86 GBytes  41.8 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]   7.00-8.00   sec  4.64 GBytes  39.9 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]   8.00-9.00   sec  4.32 GBytes  37.1 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]   9.00-10.00  sec  4.81 GBytes  41.3 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  10.00-11.00  sec  4.88 GBytes  41.9 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  11.00-12.00  sec  4.89 GBytes  42.0 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  12.00-13.00  sec  4.80 GBytes  41.3 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  13.00-14.00  sec  4.65 GBytes  39.9 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  14.00-15.00  sec  4.54 GBytes  39.0 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  15.00-16.00  sec  4.93 GBytes  42.4 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  16.00-17.00  sec  4.76 GBytes  40.9 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  17.00-18.00  sec  4.54 GBytes  39.0 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  18.00-19.00  sec  4.26 GBytes  36.6 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  19.00-20.00  sec  4.69 GBytes  40.3 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  20.00-21.00  sec  4.72 GBytes  40.5 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  21.00-22.00  sec  4.84 GBytes  41.6 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  22.00-23.00  sec  4.45 GBytes  38.2 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  23.00-24.00  sec  4.63 GBytes  39.8 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  24.00-25.00  sec  4.71 GBytes  40.5 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  25.00-26.00  sec  4.85 GBytes  41.7 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  26.00-27.00  sec  4.81 GBytes  41.3 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  27.00-28.00  sec  4.53 GBytes  38.9 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  28.00-29.00  sec  4.42 GBytes  38.0 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  29.00-30.00  sec  4.72 GBytes  40.5 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  30.00-31.00  sec  4.81 GBytes  41.3 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  31.00-32.00  sec  4.75 GBytes  40.8 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  32.00-33.00  sec  4.62 GBytes  39.7 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  33.00-34.00  sec  4.63 GBytes  39.7 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  34.00-35.00  sec  4.67 GBytes  40.1 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  35.00-36.00  sec  4.71 GBytes  40.4 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  36.00-37.00  sec  4.65 GBytes  39.9 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  37.00-38.00  sec  4.38 GBytes  37.7 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  38.00-39.00  sec  4.35 GBytes  37.3 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  39.00-40.00  sec  4.71 GBytes  40.5 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  40.00-41.00  sec  4.79 GBytes  41.1 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  41.00-42.00  sec  4.80 GBytes  41.3 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  42.00-43.00  sec  4.78 GBytes  41.0 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  43.00-44.00  sec  4.68 GBytes  40.2 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  44.00-45.00  sec  4.60 GBytes  39.5 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  45.00-46.00  sec  4.89 GBytes  42.0 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  46.00-47.00  sec  4.74 GBytes  40.7 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  47.00-48.00  sec  4.52 GBytes  38.9 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  48.00-49.00  sec  4.55 GBytes  39.1 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  49.00-50.00  sec  4.85 GBytes  41.7 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  50.00-51.00  sec  4.89 GBytes  42.0 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  51.00-52.00  sec  4.91 GBytes  42.2 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  52.00-53.00  sec  4.90 GBytes  42.1 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  53.00-54.00  sec  4.77 GBytes  41.0 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  54.00-55.00  sec  4.71 GBytes  40.4 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  55.00-56.00  sec  4.87 GBytes  41.9 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  56.00-57.00  sec  4.77 GBytes  41.0 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  57.00-58.00  sec  4.53 GBytes  38.9 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  58.00-59.00  sec  4.51 GBytes  38.7 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  59.00-60.00  sec  4.80 GBytes  41.3 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  60.00-61.00  sec  4.67 GBytes  40.1 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  61.00-62.00  sec  4.94 GBytes  42.5 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  62.00-63.00  sec  4.71 GBytes  40.4 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  63.00-64.00  sec  4.66 GBytes  40.0 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  64.00-65.00  sec  4.79 GBytes  41.1 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  65.00-66.00  sec  4.82 GBytes  41.4 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  66.00-67.00  sec  4.76 GBytes  40.9 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  67.00-68.00  sec  4.53 GBytes  38.9 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  68.00-69.00  sec  4.44 GBytes  38.1 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  69.00-70.00  sec  4.80 GBytes  41.2 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  70.00-71.00  sec  4.86 GBytes  41.7 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  71.00-72.00  sec  4.95 GBytes  42.6 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  72.00-73.00  sec  4.78 GBytes  41.1 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  73.00-74.00  sec  4.87 GBytes  41.8 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  74.00-75.00  sec  4.77 GBytes  41.0 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  75.00-76.00  sec  4.88 GBytes  41.9 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  76.00-77.00  sec  4.73 GBytes  40.6 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  77.00-78.00  sec  4.68 GBytes  40.2 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  78.00-79.00  sec  4.55 GBytes  39.1 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  79.00-80.00  sec  4.62 GBytes  39.7 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  80.00-81.00  sec  4.84 GBytes  41.6 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  81.00-82.00  sec  4.84 GBytes  41.6 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  82.00-83.00  sec  4.63 GBytes  39.8 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  83.00-84.00  sec  4.62 GBytes  39.6 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  84.00-85.00  sec  4.58 GBytes  39.4 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  85.00-86.00  sec  4.73 GBytes  40.6 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  86.00-87.00  sec  4.80 GBytes  41.2 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  87.00-88.00  sec  4.68 GBytes  40.2 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  88.00-89.00  sec  4.46 GBytes  38.3 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  89.00-90.00  sec  4.40 GBytes  37.8 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  90.00-91.00  sec  4.73 GBytes  40.7 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  91.00-92.00  sec  4.93 GBytes  42.3 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  92.00-93.00  sec  4.72 GBytes  40.6 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  93.00-94.00  sec  4.70 GBytes  40.4 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  94.00-95.00  sec  4.70 GBytes  40.4 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  95.00-96.00  sec  4.39 GBytes  37.7 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  96.00-97.00  sec  4.84 GBytes  41.6 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  97.00-98.00  sec  4.40 GBytes  37.8 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  98.00-99.00  sec  4.45 GBytes  38.2 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  [  4]  99.00-100.00 sec  4.96 GBytes  42.6 Gbits/sec    0   3.01 MBytes       
+Client on 192.168.2.12:  - - - - - - - - - - - - - - - - - - - - - - - - -
+Client on 192.168.2.12:  [ ID] Interval           Transfer     Bandwidth       Retr
+Client on 192.168.2.12:  [  4]   0.00-100.00 sec   469 GBytes  40.3 Gbits/sec   32             sender
+Client on 192.168.2.12:  [  4]   0.00-100.00 sec   469 GBytes  40.3 Gbits/sec                  receiver
+Client on 192.168.2.12:  
+Client on 192.168.2.12:  iperf Done.
+
+Client on 192.168.2.11:  Connecting to host iperf3-server, port 5201
+Client on 192.168.2.11:  [  4] local 10.48.166.129 port 38630 connected to 10.49.77.228 port 5201
+Client on 192.168.2.11:  [ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+Client on 192.168.2.11:  [  4]   0.00-1.00   sec  79.7 MBytes   669 Mbits/sec  196    717 KBytes       
+Client on 192.168.2.11:  [  4]   1.00-2.00   sec  90.0 MBytes   755 Mbits/sec    0    805 KBytes       
+Client on 192.168.2.11:  [  4]   2.00-3.00   sec  62.6 MBytes   524 Mbits/sec   46    581 KBytes       
+Client on 192.168.2.11:  [  4]   3.00-4.00   sec  58.8 MBytes   492 Mbits/sec    0    581 KBytes       
+Client on 192.168.2.11:  [  4]   4.00-5.00   sec  57.5 MBytes   484 Mbits/sec    0    581 KBytes       
+Client on 192.168.2.11:  [  4]   5.00-6.00   sec  60.0 MBytes   503 Mbits/sec    0    581 KBytes       
+Client on 192.168.2.11:  [  4]   6.00-7.01   sec  60.0 MBytes   500 Mbits/sec    0    581 KBytes       
+Client on 192.168.2.11:  [  4]   7.01-8.01   sec  58.8 MBytes   494 Mbits/sec    0    893 KBytes       
+Client on 192.168.2.11:  [  4]   8.01-9.00   sec  67.5 MBytes   570 Mbits/sec   16    901 KBytes       
+Client on 192.168.2.11:  [  4]   9.00-10.00  sec  92.1 MBytes   772 Mbits/sec  138    708 KBytes       
+Client on 192.168.2.11:  [  4]  10.00-11.00  sec  88.9 MBytes   746 Mbits/sec    0    792 KBytes       
+Client on 192.168.2.11:  [  4]  11.00-12.00  sec  79.7 MBytes   669 Mbits/sec   56    630 KBytes       
+Client on 192.168.2.11:  [  4]  12.00-13.00  sec  80.3 MBytes   674 Mbits/sec   33    502 KBytes       
+Client on 192.168.2.11:  [  4]  13.00-14.00  sec  76.9 MBytes   645 Mbits/sec    7    603 KBytes       
+Client on 192.168.2.11:  [  4]  14.00-15.00  sec  81.4 MBytes   683 Mbits/sec    0    694 KBytes       
+Client on 192.168.2.11:  [  4]  15.00-16.00  sec  90.9 MBytes   763 Mbits/sec    1    781 KBytes       
+Client on 192.168.2.11:  [  4]  16.00-17.00  sec  84.3 MBytes   707 Mbits/sec    2    632 KBytes       
+Client on 192.168.2.11:  [  4]  17.00-18.00  sec  85.9 MBytes   721 Mbits/sec    0    727 KBytes       
+Client on 192.168.2.11:  [  4]  18.00-19.00  sec  80.8 MBytes   678 Mbits/sec   50    587 KBytes       
+Client on 192.168.2.11:  [  4]  19.00-20.00  sec  83.3 MBytes   699 Mbits/sec    0    685 KBytes       
+Client on 192.168.2.11:  [  4]  20.00-21.00  sec  88.4 MBytes   742 Mbits/sec    0    774 KBytes       
+Client on 192.168.2.11:  [  4]  21.00-22.00  sec  87.0 MBytes   730 Mbits/sec   12    625 KBytes       
+Client on 192.168.2.11:  [  4]  22.00-23.00  sec  84.4 MBytes   708 Mbits/sec    1    714 KBytes       
+Client on 192.168.2.11:  [  4]  23.00-24.00  sec  83.1 MBytes   697 Mbits/sec   48    590 KBytes       
+Client on 192.168.2.11:  [  4]  24.00-25.00  sec  84.6 MBytes   710 Mbits/sec    0    686 KBytes       
+Client on 192.168.2.11:  [  4]  25.00-26.00  sec  89.9 MBytes   754 Mbits/sec    0    778 KBytes       
+Client on 192.168.2.11:  [  4]  26.00-27.00  sec  91.1 MBytes   764 Mbits/sec   46    607 KBytes       
+Client on 192.168.2.11:  [  4]  27.00-28.00  sec  86.5 MBytes   726 Mbits/sec    0    705 KBytes       
+Client on 192.168.2.11:  [  4]  28.00-29.00  sec  88.3 MBytes   741 Mbits/sec   14    792 KBytes       
+Client on 192.168.2.11:  [  4]  29.00-30.00  sec  84.5 MBytes   708 Mbits/sec   31    641 KBytes       
+Client on 192.168.2.11:  [  4]  30.00-31.00  sec  77.8 MBytes   653 Mbits/sec   15    721 KBytes       
+Client on 192.168.2.11:  [  4]  31.00-32.00  sec  91.8 MBytes   770 Mbits/sec    9    567 KBytes       
+Client on 192.168.2.11:  [  4]  32.00-33.00  sec  82.6 MBytes   693 Mbits/sec    0    664 KBytes       
+Client on 192.168.2.11:  [  4]  33.00-34.00  sec  77.9 MBytes   653 Mbits/sec    0    744 KBytes       
+Client on 192.168.2.11:  [  4]  34.00-35.00  sec  89.3 MBytes   749 Mbits/sec   15    591 KBytes       
+Client on 192.168.2.11:  [  4]  35.00-36.00  sec  86.3 MBytes   724 Mbits/sec    0    691 KBytes       
+Client on 192.168.2.11:  [  4]  36.00-37.00  sec  90.2 MBytes   757 Mbits/sec    0    782 KBytes       
+Client on 192.168.2.11:  [  4]  37.00-38.00  sec  84.6 MBytes   710 Mbits/sec   50    634 KBytes       
+Client on 192.168.2.11:  [  4]  38.00-39.00  sec  84.0 MBytes   704 Mbits/sec   12    721 KBytes       
+Client on 192.168.2.11:  [  4]  39.00-40.00  sec  82.7 MBytes   694 Mbits/sec  208    422 KBytes       
+Client on 192.168.2.11:  [  4]  40.00-41.00  sec  76.6 MBytes   643 Mbits/sec    0    541 KBytes       
+Client on 192.168.2.11:  [  4]  41.00-42.00  sec  82.9 MBytes   695 Mbits/sec    0    645 KBytes       
+Client on 192.168.2.11:  [  4]  42.00-43.00  sec  77.0 MBytes   646 Mbits/sec    1    725 KBytes       
+Client on 192.168.2.11:  [  4]  43.00-44.00  sec  91.7 MBytes   769 Mbits/sec    1    809 KBytes       
+Client on 192.168.2.11:  [  4]  44.00-45.00  sec  74.8 MBytes   627 Mbits/sec  186    496 KBytes       
+Client on 192.168.2.11:  [  4]  45.00-46.00  sec  78.6 MBytes   659 Mbits/sec    0    605 KBytes       
+Client on 192.168.2.11:  [  4]  46.00-47.00  sec  85.0 MBytes   713 Mbits/sec    0    698 KBytes       
+Client on 192.168.2.11:  [  4]  47.00-48.00  sec  86.9 MBytes   729 Mbits/sec   32    557 KBytes       
+Client on 192.168.2.11:  [  4]  48.00-49.00  sec  81.8 MBytes   686 Mbits/sec   21    653 KBytes       
+Client on 192.168.2.11:  [  4]  49.00-50.00  sec  87.6 MBytes   735 Mbits/sec    0    746 KBytes       
+Client on 192.168.2.11:  [  4]  50.00-51.00  sec  90.1 MBytes   756 Mbits/sec   36    587 KBytes       
+Client on 192.168.2.11:  [  4]  51.00-52.00  sec  82.9 MBytes   695 Mbits/sec    0    682 KBytes       
+Client on 192.168.2.11:  [  4]  52.00-53.00  sec  87.1 MBytes   730 Mbits/sec    1    769 KBytes       
+Client on 192.168.2.11:  [  4]  53.00-54.00  sec  85.2 MBytes   715 Mbits/sec   15    615 KBytes       
+Client on 192.168.2.11:  [  4]  54.00-55.00  sec  77.0 MBytes   646 Mbits/sec    3    527 KBytes       
+Client on 192.168.2.11:  [  4]  55.00-56.00  sec  83.4 MBytes   700 Mbits/sec    0    634 KBytes       
+Client on 192.168.2.11:  [  4]  56.00-57.00  sec  88.0 MBytes   738 Mbits/sec    0    728 KBytes       
+Client on 192.168.2.11:  [  4]  57.00-58.00  sec  82.1 MBytes   689 Mbits/sec   17    598 KBytes       
+Client on 192.168.2.11:  [  4]  58.00-59.00  sec  84.7 MBytes   710 Mbits/sec    0    694 KBytes       
+Client on 192.168.2.11:  [  4]  59.00-60.00  sec  87.0 MBytes   730 Mbits/sec   16    553 KBytes       
+Client on 192.168.2.11:  [  4]  60.00-61.00  sec  82.8 MBytes   695 Mbits/sec    0    655 KBytes       
+Client on 192.168.2.11:  [  4]  61.00-62.00  sec  88.6 MBytes   743 Mbits/sec    1    523 KBytes       
+Client on 192.168.2.11:  [  4]  62.00-63.00  sec  78.9 MBytes   661 Mbits/sec    1    618 KBytes       
+Client on 192.168.2.11:  [  4]  63.00-64.00  sec  80.8 MBytes   679 Mbits/sec   81    515 KBytes       
+Client on 192.168.2.11:  [  4]  64.00-65.00  sec  81.0 MBytes   680 Mbits/sec    0    621 KBytes       
+Client on 192.168.2.11:  [  4]  65.00-66.00  sec  87.4 MBytes   733 Mbits/sec    0    718 KBytes       
+Client on 192.168.2.11:  [  4]  66.00-67.00  sec  90.7 MBytes   761 Mbits/sec    0    807 KBytes       
+Client on 192.168.2.11:  [  4]  67.00-68.00  sec  87.2 MBytes   731 Mbits/sec    4    638 KBytes       
+Client on 192.168.2.11:  [  4]  68.00-69.00  sec  87.1 MBytes   731 Mbits/sec   16    725 KBytes       
+Client on 192.168.2.11:  [  4]  69.00-70.00  sec  86.9 MBytes   729 Mbits/sec    0    809 KBytes       
+Client on 192.168.2.11:  [  4]  70.00-71.00  sec  79.7 MBytes   668 Mbits/sec   61    618 KBytes       
+Client on 192.168.2.11:  [  4]  71.00-72.00  sec  86.2 MBytes   723 Mbits/sec    0    714 KBytes       
+Client on 192.168.2.11:  [  4]  72.00-73.00  sec  86.8 MBytes   728 Mbits/sec    0    801 KBytes       
+Client on 192.168.2.11:  [  4]  73.00-74.00  sec  82.9 MBytes   695 Mbits/sec   28    651 KBytes       
+Client on 192.168.2.11:  [  4]  74.00-75.00  sec  86.2 MBytes   723 Mbits/sec    0    741 KBytes       
+Client on 192.168.2.11:  [  4]  75.00-76.00  sec  89.8 MBytes   753 Mbits/sec   10    584 KBytes       
+Client on 192.168.2.11:  [  4]  76.00-77.00  sec  80.0 MBytes   671 Mbits/sec    1    676 KBytes       
+Client on 192.168.2.11:  [  4]  77.00-78.00  sec  84.1 MBytes   705 Mbits/sec    0    762 KBytes       
+Client on 192.168.2.11:  [  4]  78.00-79.00  sec  87.3 MBytes   731 Mbits/sec   11    611 KBytes       
+Client on 192.168.2.11:  [  4]  79.00-80.00  sec  85.2 MBytes   716 Mbits/sec   28    703 KBytes       
+Client on 192.168.2.11:  [  4]  80.00-81.00  sec  90.6 MBytes   760 Mbits/sec    0    794 KBytes       
+Client on 192.168.2.11:  [  4]  81.00-82.00  sec  75.1 MBytes   630 Mbits/sec    0    861 KBytes       
+Client on 192.168.2.11:  [  4]  82.00-83.00  sec  71.4 MBytes   596 Mbits/sec    0    904 KBytes       
+Client on 192.168.2.11:  [  4]  83.00-84.01  sec  58.8 MBytes   489 Mbits/sec    0    904 KBytes       
+Client on 192.168.2.11:  [  4]  84.01-85.01  sec  58.8 MBytes   493 Mbits/sec    0    904 KBytes       
+Client on 192.168.2.11:  [  4]  85.01-86.00  sec   101 MBytes   855 Mbits/sec    2    977 KBytes       
+Client on 192.168.2.11:  [  4]  86.00-87.00  sec  91.6 MBytes   768 Mbits/sec   74    770 KBytes       
+Client on 192.168.2.11:  [  4]  87.00-88.00  sec  86.4 MBytes   725 Mbits/sec   17    625 KBytes       
+Client on 192.168.2.11:  [  4]  88.00-89.00  sec  82.2 MBytes   689 Mbits/sec   34    507 KBytes       
+Client on 192.168.2.11:  [  4]  89.00-90.00  sec  79.6 MBytes   668 Mbits/sec    0    611 KBytes       
+Client on 192.168.2.11:  [  4]  90.00-91.00  sec  86.4 MBytes   725 Mbits/sec    0    710 KBytes       
+Client on 192.168.2.11:  [  4]  91.00-92.00  sec  90.5 MBytes   759 Mbits/sec    0    800 KBytes       
+Client on 192.168.2.11:  [  4]  92.00-93.02  sec  66.2 MBytes   545 Mbits/sec    0    825 KBytes       
+Client on 192.168.2.11:  [  4]  93.02-94.00  sec  57.5 MBytes   492 Mbits/sec    0    825 KBytes       
+Client on 192.168.2.11:  [  4]  94.00-95.00  sec  57.5 MBytes   481 Mbits/sec    0    825 KBytes       
+Client on 192.168.2.11:  [  4]  95.00-96.01  sec  60.0 MBytes   500 Mbits/sec    0    825 KBytes       
+Client on 192.168.2.11:  [  4]  96.01-97.02  sec  60.0 MBytes   500 Mbits/sec    0    825 KBytes       
+Client on 192.168.2.11:  [  4]  97.02-98.02  sec  58.8 MBytes   493 Mbits/sec    0    825 KBytes       
+Client on 192.168.2.11:  [  4]  98.02-99.01  sec  58.8 MBytes   496 Mbits/sec    0    825 KBytes       
+Client on 192.168.2.11:  [  4]  99.01-100.00 sec  57.5 MBytes   487 Mbits/sec    0    825 KBytes       
+Client on 192.168.2.11:  - - - - - - - - - - - - - - - - - - - - - - - - -
+Client on 192.168.2.11:  [ ID] Interval           Transfer     Bandwidth       Retr
+Client on 192.168.2.11:  [  4]   0.00-100.00 sec  7.86 GBytes   675 Mbits/sec  1704             sender
+Client on 192.168.2.11:  [  4]   0.00-100.00 sec  7.86 GBytes   675 Mbits/sec                  receiver
+Client on 192.168.2.11:  
+Client on 192.168.2.11:  iperf Done.
+
+Client on 192.168.2.10:  Connecting to host iperf3-server, port 5201
+Client on 192.168.2.10:  [  4] local 10.48.42.196 port 52836 connected to 10.49.77.228 port 5201
+Client on 192.168.2.10:  [ ID] Interval           Transfer     Bandwidth       Retr  Cwnd
+Client on 192.168.2.10:  [  4]   0.00-1.00   sec  62.0 MBytes   520 Mbits/sec    9    243 KBytes       
+Client on 192.168.2.10:  [  4]   1.00-2.00   sec  64.7 MBytes   543 Mbits/sec    1    384 KBytes       
+Client on 192.168.2.10:  [  4]   2.00-3.00   sec  71.7 MBytes   601 Mbits/sec   50    488 KBytes       
+Client on 192.168.2.10:  [  4]   3.00-4.00   sec  79.1 MBytes   664 Mbits/sec    0    595 KBytes       
+Client on 192.168.2.10:  [  4]   4.00-5.00   sec  73.9 MBytes   620 Mbits/sec  148    380 KBytes       
+Client on 192.168.2.10:  [  4]   5.00-6.00   sec  75.0 MBytes   629 Mbits/sec    0    506 KBytes       
+Client on 192.168.2.10:  [  4]   6.00-7.00   sec  78.8 MBytes   661 Mbits/sec    2    607 KBytes       
+Client on 192.168.2.10:  [  4]   7.00-8.00   sec  86.2 MBytes   723 Mbits/sec    0    703 KBytes       
+Client on 192.168.2.10:  [  4]   8.00-9.00   sec  83.1 MBytes   697 Mbits/sec   56    567 KBytes       
+Client on 192.168.2.10:  [  4]   9.00-10.00  sec  82.1 MBytes   689 Mbits/sec    0    663 KBytes       
+Client on 192.168.2.10:  [  4]  10.00-11.01  sec  57.8 MBytes   482 Mbits/sec    0    671 KBytes       
+Client on 192.168.2.10:  [  4]  11.01-12.00  sec  61.1 MBytes   516 Mbits/sec    1    682 KBytes       
+Client on 192.168.2.10:  [  4]  12.00-13.00  sec  84.7 MBytes   710 Mbits/sec   77    758 KBytes       
+Client on 192.168.2.10:  [  4]  13.00-14.00  sec  93.7 MBytes   786 Mbits/sec    7    840 KBytes       
+Client on 192.168.2.10:  [  4]  14.00-15.00  sec  72.7 MBytes   610 Mbits/sec  219    382 KBytes       
+Client on 192.168.2.10:  [  4]  15.00-16.00  sec  72.9 MBytes   612 Mbits/sec    0    504 KBytes       
+Client on 192.168.2.10:  [  4]  16.00-17.00  sec  80.2 MBytes   673 Mbits/sec    0    610 KBytes       
+Client on 192.168.2.10:  [  4]  17.00-18.00  sec  84.8 MBytes   712 Mbits/sec    0    706 KBytes       
+Client on 192.168.2.10:  [  4]  18.00-19.00  sec  86.6 MBytes   726 Mbits/sec   69    564 KBytes       
+Client on 192.168.2.10:  [  4]  19.00-20.00  sec  83.2 MBytes   698 Mbits/sec    0    664 KBytes       
+Client on 192.168.2.10:  [  4]  20.00-21.00  sec  79.0 MBytes   662 Mbits/sec   45    552 KBytes       
+Client on 192.168.2.10:  [  4]  21.00-22.00  sec  75.2 MBytes   631 Mbits/sec   25    619 KBytes       
+Client on 192.168.2.10:  [  4]  22.00-23.01  sec  69.3 MBytes   574 Mbits/sec  172    478 KBytes       
+Client on 192.168.2.10:  [  4]  23.01-24.00  sec  63.1 MBytes   537 Mbits/sec   41    561 KBytes       
+Client on 192.168.2.10:  [  4]  24.00-25.02  sec  60.0 MBytes   494 Mbits/sec    0    569 KBytes       
+Client on 192.168.2.10:  [  4]  25.02-26.01  sec  60.0 MBytes   508 Mbits/sec    0    569 KBytes       
+Client on 192.168.2.10:  [  4]  26.01-27.01  sec  60.0 MBytes   503 Mbits/sec    0    573 KBytes       
+Client on 192.168.2.10:  [  4]  27.01-28.02  sec  60.0 MBytes   500 Mbits/sec    0    573 KBytes       
+Client on 192.168.2.10:  [  4]  28.02-29.00  sec  58.8 MBytes   499 Mbits/sec    0    573 KBytes       
+Client on 192.168.2.10:  [  4]  29.00-30.00  sec  78.9 MBytes   665 Mbits/sec    1    695 KBytes       
+Client on 192.168.2.10:  [  4]  30.00-31.00  sec  90.6 MBytes   760 Mbits/sec    0    786 KBytes       
+Client on 192.168.2.10:  [  4]  31.00-32.00  sec  90.1 MBytes   756 Mbits/sec   35    615 KBytes       
+Client on 192.168.2.10:  [  4]  32.00-33.00  sec  79.3 MBytes   665 Mbits/sec   40    508 KBytes       
+Client on 192.168.2.10:  [  4]  33.00-34.00  sec  81.2 MBytes   681 Mbits/sec    1    611 KBytes       
+Client on 192.168.2.10:  [  4]  34.00-35.00  sec  85.4 MBytes   717 Mbits/sec    0    709 KBytes       
+Client on 192.168.2.10:  [  4]  35.00-36.00  sec  89.1 MBytes   747 Mbits/sec   22    793 KBytes       
+Client on 192.168.2.10:  [  4]  36.00-37.00  sec  97.4 MBytes   817 Mbits/sec    6    876 KBytes       
+Client on 192.168.2.10:  [  4]  37.00-38.00  sec  61.6 MBytes   515 Mbits/sec   23    625 KBytes       
+Client on 192.168.2.10:  [  4]  38.00-39.01  sec  60.0 MBytes   500 Mbits/sec    0    625 KBytes       
+Client on 192.168.2.10:  [  4]  39.01-40.00  sec  82.9 MBytes   704 Mbits/sec    1    836 KBytes       
+Client on 192.168.2.10:  [  4]  40.00-41.00  sec  96.1 MBytes   806 Mbits/sec    0    918 KBytes       
+Client on 192.168.2.10:  [  4]  41.00-42.00  sec  86.8 MBytes   728 Mbits/sec   89    725 KBytes       
+Client on 192.168.2.10:  [  4]  42.00-43.02  sec  67.4 MBytes   555 Mbits/sec  195    553 KBytes       
+Client on 192.168.2.10:  [  4]  43.02-44.00  sec  58.8 MBytes   501 Mbits/sec    0    553 KBytes       
+Client on 192.168.2.10:  [  4]  44.00-45.01  sec  61.1 MBytes   507 Mbits/sec    9    561 KBytes       
+Client on 192.168.2.10:  [  4]  45.01-46.01  sec  60.0 MBytes   506 Mbits/sec    0    561 KBytes       
+Client on 192.168.2.10:  [  4]  46.01-47.00  sec  80.9 MBytes   684 Mbits/sec    0    651 KBytes       
+Client on 192.168.2.10:  [  4]  47.00-48.00  sec  89.1 MBytes   747 Mbits/sec    1    740 KBytes       
+Client on 192.168.2.10:  [  4]  48.00-49.00  sec  84.6 MBytes   710 Mbits/sec  194    592 KBytes       
+Client on 192.168.2.10:  [  4]  49.00-50.00  sec  83.3 MBytes   699 Mbits/sec    0    691 KBytes       
+Client on 192.168.2.10:  [  4]  50.00-51.00  sec  91.8 MBytes   770 Mbits/sec    0    782 KBytes       
+Client on 192.168.2.10:  [  4]  51.00-52.00  sec  93.8 MBytes   787 Mbits/sec    0    868 KBytes       
+Client on 192.168.2.10:  [  4]  52.00-53.00  sec  83.9 MBytes   704 Mbits/sec   83    690 KBytes       
+Client on 192.168.2.10:  [  4]  53.00-54.00  sec  90.7 MBytes   760 Mbits/sec   10    778 KBytes       
+Client on 192.168.2.10:  [  4]  54.00-55.00  sec  88.1 MBytes   739 Mbits/sec  255    436 KBytes       
+Client on 192.168.2.10:  [  4]  55.00-56.00  sec  64.7 MBytes   542 Mbits/sec    0    477 KBytes       
+Client on 192.168.2.10:  [  4]  56.00-57.00  sec  77.7 MBytes   652 Mbits/sec    0    588 KBytes       
+Client on 192.168.2.10:  [  4]  57.00-58.00  sec  80.3 MBytes   673 Mbits/sec   54    484 KBytes       
+Client on 192.168.2.10:  [  4]  58.00-59.00  sec  77.8 MBytes   652 Mbits/sec    0    592 KBytes       
+Client on 192.168.2.10:  [  4]  59.00-60.00  sec  83.6 MBytes   702 Mbits/sec    0    689 KBytes       
+Client on 192.168.2.10:  [  4]  60.00-61.00  sec  82.8 MBytes   695 Mbits/sec    3    769 KBytes       
+Client on 192.168.2.10:  [  4]  61.00-62.00  sec  91.9 MBytes   771 Mbits/sec    5    850 KBytes       
+Client on 192.168.2.10:  [  4]  62.00-63.00  sec  77.1 MBytes   647 Mbits/sec  234    489 KBytes       
+Client on 192.168.2.10:  [  4]  63.00-64.00  sec  78.6 MBytes   659 Mbits/sec    0    596 KBytes       
+Client on 192.168.2.10:  [  4]  64.00-65.00  sec  79.8 MBytes   670 Mbits/sec   60    489 KBytes       
+ccccccllkktrvcvfkdvtnchkgfhgdgtlkfttivbClient on 192.168.2.10:  [  4]  65.00-66.00  sec  79.3 MBytes   665 Mbits/sec    0    598 KBytes       
+rjguk
+Client on 192.168.2.10:  [  4]  66.00-67.00  sec  85.8 MBytes   720 Mbits/sec    0    695 KBytes       
+Client on 192.168.2.10:  [  4]  67.00-68.00  sec  91.3 MBytes   766 Mbits/sec    0    786 KBytes       
+Client on 192.168.2.10:  [  4]  68.00-69.00  sec  89.3 MBytes   749 Mbits/sec  170    621 KBytes       
+Client on 192.168.2.10:  [  4]  69.00-70.00  sec  87.7 MBytes   735 Mbits/sec   41    706 KBytes       
+Client on 192.168.2.10:  [  4]  70.00-71.00  sec  90.4 MBytes   759 Mbits/sec    0    797 KBytes       
+Client on 192.168.2.10:  [  4]  71.00-72.00  sec  93.3 MBytes   783 Mbits/sec    6    874 KBytes       
+Client on 192.168.2.10:  [  4]  72.00-73.00  sec  90.0 MBytes   755 Mbits/sec   17    685 KBytes       
+Client on 192.168.2.10:  [  4]  73.00-74.00  sec  80.3 MBytes   674 Mbits/sec    0    766 KBytes       
+Client on 192.168.2.10:  [  4]  74.00-75.00  sec  85.3 MBytes   716 Mbits/sec  212    312 KBytes       
+Client on 192.168.2.10:  [  4]  75.00-76.00  sec  68.4 MBytes   574 Mbits/sec    0    446 KBytes       
+Client on 192.168.2.10:  [  4]  76.00-77.00  sec  76.2 MBytes   639 Mbits/sec    0    557 KBytes       
+Client on 192.168.2.10:  [  4]  77.00-78.00  sec  80.9 MBytes   679 Mbits/sec    0    657 KBytes       
+Client on 192.168.2.10:  [  4]  78.00-79.00  sec  86.1 MBytes   723 Mbits/sec    5    744 KBytes       
+Client on 192.168.2.10:  [  4]  79.00-80.00  sec  93.0 MBytes   780 Mbits/sec    1    830 KBytes       
+Client on 192.168.2.10:  [  4]  80.00-81.00  sec  88.2 MBytes   740 Mbits/sec   44    647 KBytes       
+Client on 192.168.2.10:  [  4]  81.00-82.00  sec  85.2 MBytes   715 Mbits/sec    1    735 KBytes       
+Client on 192.168.2.10:  [  4]  82.00-83.01  sec  68.1 MBytes   567 Mbits/sec   53    554 KBytes       
+Client on 192.168.2.10:  [  4]  83.01-84.01  sec  60.0 MBytes   502 Mbits/sec    0    554 KBytes       
+Client on 192.168.2.10:  [  4]  84.01-85.01  sec  60.0 MBytes   503 Mbits/sec    0    554 KBytes       
+Client on 192.168.2.10:  [  4]  85.01-86.00  sec  70.9 MBytes   601 Mbits/sec    0    598 KBytes       
+Client on 192.168.2.10:  [  4]  86.00-87.00  sec  85.7 MBytes   719 Mbits/sec   17    690 KBytes       
+Client on 192.168.2.10:  [  4]  87.00-88.00  sec  80.2 MBytes   672 Mbits/sec   35    572 KBytes       
+Client on 192.168.2.10:  [  4]  88.00-89.01  sec  62.3 MBytes   519 Mbits/sec    0    599 KBytes       
+Client on 192.168.2.10:  [  4]  89.01-90.01  sec  60.0 MBytes   499 Mbits/sec    0    599 KBytes       
+Client on 192.168.2.10:  [  4]  90.01-91.01  sec  61.2 MBytes   516 Mbits/sec    0    599 KBytes       
+Client on 192.168.2.10:  [  4]  91.01-92.01  sec  60.0 MBytes   503 Mbits/sec    0    599 KBytes       
+Client on 192.168.2.10:  [  4]  92.01-93.01  sec  68.0 MBytes   569 Mbits/sec  187    474 KBytes       
+Client on 192.168.2.10:  [  4]  93.01-94.00  sec  62.1 MBytes   529 Mbits/sec    0    484 KBytes       
+Client on 192.168.2.10:  [  4]  94.00-95.00  sec  76.5 MBytes   642 Mbits/sec  122    287 KBytes       
+Client on 192.168.2.10:  [  4]  95.00-96.00  sec  68.1 MBytes   571 Mbits/sec    0    431 KBytes       
+Client on 192.168.2.10:  [  4]  96.00-97.00  sec  74.6 MBytes   626 Mbits/sec    0    545 KBytes       
+Client on 192.168.2.10:  [  4]  97.00-98.00  sec  76.2 MBytes   639 Mbits/sec   69    484 KBytes       
+Client on 192.168.2.10:  [  4]  98.00-99.00  sec  78.2 MBytes   656 Mbits/sec    0    590 KBytes       
+Client on 192.168.2.10:  [  4]  99.00-100.00 sec  84.7 MBytes   710 Mbits/sec   16    687 KBytes       
+Client on 192.168.2.10:  - - - - - - - - - - - - - - - - - - - - - - - - -
+Client on 192.168.2.10:  [ ID] Interval           Transfer     Bandwidth       Retr
+Client on 192.168.2.10:  [  4]   0.00-100.00 sec  7.55 GBytes   649 Mbits/sec  3239             sender
+Client on 192.168.2.10:  [  4]   0.00-100.00 sec  7.55 GBytes   649 Mbits/sec                  receiver
+Client on 192.168.2.10:  
+Client on 192.168.2.10:  iperf Done.
+
+deployment.apps "iperf3-server-deployment" deleted
+service "iperf3-server" deleted
+daemonset.apps "iperf3-clients" deleted
