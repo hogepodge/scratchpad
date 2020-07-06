@@ -8,7 +8,7 @@ $common = <<COMMON
 #######################
 sudo apt update -y
 sudo apt upgrade -y
-sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
+sudo apt install apt-transport-https ca-certificates curl gnupg-agent software-properties-common iperf3 sysstat wireguard -y
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
@@ -52,14 +52,6 @@ sudo apt-mark hold kubelet kubeadm kubectl
 ## Turn swap off, permanently
 sudo swapoff --all
 sudo sed -i.bak '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
-
-#######################
-### Wireguard
-#######################
-
-sudo add-apt-repository ppa:wireguard/wireguard -y
-sudo apt-get update -y
-sudo apt-get install wireguard -y
 
 ####################
 ## Set up networking
@@ -119,7 +111,7 @@ NODE
 
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "bento/ubuntu-18.04"
+  config.vm.box = "bento/ubuntu-20.04"
 
   config.trigger.after [:provision] do |t|
     t.name = "Reboot after provisioning"
@@ -128,8 +120,8 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "control" do |control|
     control.vm.hostname = "control"
-    control.vm.network "public_network", ip: "192.168.1.100"
     control.vm.network "private_network", ip: "192.168.2.10"
+    control.vm.network "public_network", ip: "192.168.1.100"
     control.vm.synced_folder ".", "/vagrant_data"
     control.vm.provision "shell", inline: $common
     control.vm.provision "shell", inline: $control

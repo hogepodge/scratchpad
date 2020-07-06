@@ -84,12 +84,6 @@ sudo cp -f /etc/kubernetes/admin.conf /home/vagrant/.kube/config
 sudo cp -f /etc/kubernetes/admin.conf /vagrant_data/kube_config
 sudo chown \$(id vagrant -u):\$(id vagrant -g) /home/vagrant/.kube/config
 
-kubectl apply -f /vagrant_data/manifests/calico-3.14.yaml
-#kubectl apply -f /vagrant_data/manifests/ingress-nginix-mandatory.yaml
-#kubectl apply -f /vagrant_data/manifests/ingress-nginix-baremetal.yaml
-#kubectl apply -f /vagrant_data/manifests/metallb.yaml
-#kubectl apply -f /vagrant_data/manifests/metallb-config.yaml
-
 curl -O -L  https://github.com/projectcalico/calicoctl/releases/download/v3.14.0/calicoctl
 chmod +x calicoctl
 sudo cp calicoctl /usr/local/bin/calicoctl

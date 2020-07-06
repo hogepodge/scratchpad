@@ -1,0 +1,14 @@
+apiVersion: projectcalico.org/v3
+kind: GlobalNetworkPolicy
+metadata:
+  name: control-access
+spec:
+  selector: has(node-role.kubernetes.io/master)
+  ingress:
+  - action: Allow
+    protocol: TCP
+    source:
+      selector: has(blue)
+    destination:
+      ports:
+      - 8888
